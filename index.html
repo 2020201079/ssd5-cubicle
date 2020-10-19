@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+            <img id="groundTexture" src="/models/floor/wooden-floor.jpg">
+            <img id="blueWall" src="/models/wall/blue-wall.jpg">
+            <img id="laptopImage" src="/models/laptop-obj/iMacScreen.png">
+            <a-asset-item id="table-obj" src="/models/table-obj/table.obj"></a-asset-item>
+            <a-asset-item id="table-mtl" src="/models/table-obj/table.mtl"></a-asset-item>
+            <a-asset-item id="laptop-obj" src="/models/desktop-computer-obj/desktop-computer.obj"></a-asset-item>
+            <a-asset-item id="laptop-mtl" src="/models/desktop-computer-obj/desktop-computer.mtl"></a-asset-item>
+
+
+        </a-assets>
+        <a-plane src="#groundTexture" rotation="-90 0 0" width="600" height="100" position="0 -100 -200" ></a-plane>
+        <a-plane src="#blueWall" rotation="0 0 0" width="600" height="300" position="0 0 -250" ></a-plane>
+        <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" position="0 -60 -240" scale="130 130 170"></a-entity>
+        <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="50 30 -240" scale="20 20 20" rotation="0 90 0" ></a-entity>
+        
+    </a-scene>
+  </body>
+</html>
