@@ -16,6 +16,10 @@
             <a-asset-item id="laptop-mtl" src="/models/desktop-computer-obj/desktop-computer.mtl"></a-asset-item>
             <a-asset-item id="car-mtl" src="models/75-chevrolet_camaro_ss/Chevrolet_Camaro_SS_High.mtl"></a-asset-item>
             <a-asset-item id="car-obj" src="models/75-chevrolet_camaro_ss/Chevrolet_Camaro_SS_High.obj"></a-asset-item>
+            <a-asset-item id="coffee-machine-obj" src="models/nespresso-pixie-coffee-maker-threekit-dphil-clone-obj/nespresso-pixie-coffee-maker-threekit-dphil-clone.obj"></a-asset-item>
+            <a-asset-item id="coffee-machine-mtl" src="models/nespresso-pixie-coffee-maker-threekit-dphil-clone-obj/nespresso-pixie-coffee-maker-threekit-dphil-clone.mtl"></a-asset-item>
+            <a-asset-item id="coffee-table-obj" src="models/wooden-coffe-table-obj/wooden-coffe-table.obj"></a-asset-item>
+            <a-asset-item id="coffee-table-mtl" src="models/wooden-coffe-table-obj/wooden-coffe-table.mtl"></a-asset-item>
         </a-assets>
         <rw-room position="-2 0 -2" material="color:#866">
           <rw-wall position="4 0 0"></rw-wall>
@@ -25,7 +29,7 @@
               <rw-doorhole id="holeA"></rw-doorhole>
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
-          <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.6" scale="1 1 1">
+          <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.7" scale="1 1 1">
             <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.2 0.2" rotation="0 90 0" ></a-entity>
           </a-entity>
           <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 90 0" position="0.7 0 7.5" scale="1 1 1">
@@ -40,10 +44,10 @@
           </rw-wall>
           <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
           <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
+          <a-entity obj-model="obj: #coffee-machine-obj;mtl: #coffee-machine-mtl;" position="0.5 0.7 -0.55" scale="0.03 0.03 0.03" rotation="0 0 0" >
+            <a-entity obj-model="obj: #coffee-table-obj;mtl: #coffee-table-mtl;" position="0 -17 1" scale="12 12 12" rotation="0 0 0" ></a-entity>
+          </a-entity>
         </rw-room>
-
-        <a-entity obj-model="obj: #car-obj;mtl: #car-mtl;" position="-5 0 -140" scale="3 3 3" rotation="0 90 0" ></a-entity>-->
-        
     </a-scene>
   </body>
 </html>
