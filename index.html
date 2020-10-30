@@ -2,6 +2,7 @@
   <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <script src="https://clara.io/embed/ff43b24d-b71b-49fb-95ca-323ca05c527f?renderer=webgl" width="800" height="600" allowfullscreen></script>
   </head>
   <body>
     <a-scene>
@@ -25,6 +26,9 @@
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
           <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.6" scale="1 1 1">
+            <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.2 0.2" rotation="0 90 0" ></a-entity>
+          </a-entity>
+          <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 90 0" position="0.7 0 7.5" scale="1 1 1">
             <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.2 0.2" rotation="0 90 0" ></a-entity>
           </a-entity>
         </rw-room>
