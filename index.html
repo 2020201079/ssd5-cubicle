@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -15,13 +16,29 @@
             <a-asset-item id="car-mtl" src="models/75-chevrolet_camaro_ss/Chevrolet_Camaro_SS_High.mtl"></a-asset-item>
             <a-asset-item id="car-obj" src="models/75-chevrolet_camaro_ss/Chevrolet_Camaro_SS_High.obj"></a-asset-item>
         </a-assets>
+        <rw-room position="-2 0 -2" material="color:#866">
+          <rw-wall position="4 0 0"></rw-wall>
+          <rw-wall position="4 0 8"></rw-wall>
+          <rw-wall position="0 0 8"></rw-wall>
+          <rw-wall position="0 0 0">
+              <rw-doorhole id="holeA"></rw-doorhole>
+              <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+          </rw-wall>
+          <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.6" scale="1 1 1">
+            <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.2 0.2" rotation="0 90 0" ></a-entity>
+          </a-entity>
+        </rw-room>
 
-        <a-plane src="#groundTexture" rotation="-90 0 0" width="600" height="100" position="0 -100 -200" ></a-plane>
-        <a-plane src="#blueWall" rotation="0 0 0" width="600" height="300" position="0 0 -250" ></a-plane>
-        <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" position="0 -40 -130" scale="80 80 80"></a-entity>
-        <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="50 18 -140" scale="13 13 13" rotation="0 90 0" ></a-entity>
+        <rw-room position="0 0 -3">
+          <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
+          <rw-wall position=" 1 0  1" material="color:#877">
+              <rw-doorhole id="holeB"></rw-doorhole>
+          </rw-wall>
+          <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
+          <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
+        </rw-room>
 
-        <a-entity obj-model="obj: #car-obj;mtl: #car-mtl;" position="-5 0 -140" scale="3 3 3" rotation="0 90 0" ></a-entity>
+        <a-entity obj-model="obj: #car-obj;mtl: #car-mtl;" position="-5 0 -140" scale="3 3 3" rotation="0 90 0" ></a-entity>-->
         
     </a-scene>
   </body>
