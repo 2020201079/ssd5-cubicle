@@ -33,13 +33,13 @@
         <a-camera >
           <a-cursor color="#FF0000"></a-cursor>
         </a-camera>
-        <rw-room position="-2 0 -2" material="color:#866">
+        <rw-room position="-2 0 -2" material="color:#787">
           <rw-wall position="4 0 0">
             <a-entity obj-model="obj: #window-obj;mtl: #window-mtl;" position="2.8 0.8 0" scale="0.6 0.6 0.6" rotation="0 0 0" ></a-entity>
           </rw-wall>
-          <rw-wall position="4 0 8"></rw-wall>
-          <rw-wall position="0 0 8"></rw-wall>
-          <rw-wall position="0 0 0">
+          <rw-wall position="4 0 8" material="color:#787"></rw-wall>
+          <rw-wall position="0 0 8" material="color:#787"></rw-wall>
+          <rw-wall position="0 0 0" material="color:#787">
               <rw-doorhole id="holeA"></rw-doorhole>
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
@@ -92,6 +92,7 @@
     </a-scene>
 
     <script>
+      //js for opening and closing door. Need to put this in separate file.
       var door = document.getElementById("door");
       
       door.addEventListener("click",function()
