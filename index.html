@@ -27,7 +27,12 @@
             <a-asset-item id="window-mtl" src="models/window/window-frame-and-pane.mtl"></a-asset-item>
             <a-asset-item id="chair-obj" src="models/chair-obj/chair.obj"></a-asset-item>
             <a-asset-item id="chair-mtl" src="models/chair-obj/chair.mtl"></a-asset-item>
+            <a-asset-item id="door-obj" src="models/door/door.obj"></a-asset-item>
+            <a-asset-item id="door-mtl" src="models/door/door.mtl"></a-asset-item>
         </a-assets>
+        <a-camera >
+          <a-cursor color="#FF0000"></a-cursor>
+        </a-camera>
         <rw-room position="-2 0 -2" material="color:#866">
           <rw-wall position="4 0 0">
             <a-entity obj-model="obj: #window-obj;mtl: #window-mtl;" position="2.8 0.8 0" scale="0.6 0.6 0.6" rotation="0 0 0" ></a-entity>
@@ -59,10 +64,13 @@
               <a-sphere radius="0.03"></a-sphere>
             </a-entity>
           </a-entity>
+
+
         </rw-room>
 
         <!-- break room is from here-->
         <rw-room position="0 0 -3">
+          <a-entity id="door" obj-model="obj: #door-obj;mtl: #door-mtl;" position="0.49 0 1" scale="0.84 0.905 0.8" rotation="0 90 0" ></a-entity>
           <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
           <rw-wall position=" 1 0  1" material="color:#877">
               <rw-doorhole id="holeB"></rw-doorhole>
@@ -72,6 +80,7 @@
           <a-entity obj-model="obj: #coffee-machine-obj;mtl: #coffee-machine-mtl;" position="0.5 0.7 -0.55" scale="0.03 0.03 0.03" rotation="0 0 0" >
             <a-entity obj-model="obj: #coffee-table-obj;mtl: #coffee-table-mtl;" position="0 -17 1" scale="12 12 12" rotation="0 0 0" ></a-entity>
           </a-entity>
+
         </rw-room>
 
         <a href="https://github.com/supermedium/aframe-super-keyboard" class="github-corner">
@@ -81,5 +90,36 @@
         </a>
         <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </a-scene>
+
+    <script>
+      var door = document.getElementById("door");
+      
+      door.addEventListener("click",function()
+      {
+        var currRotation = door.getAttribute("rotation")
+        console.log(currRotation);
+        console.log(typeof(currRotation));
+        if (currRotation.x == 0 && currRotation.y == 90 && currRotation.z == 0){
+          door.setAttribute("rotation",
+          {
+            x:0, y:180,z:0
+          });
+          door.setAttribute("position",
+          {
+            x:0.17, y:0,z:1.4
+          });
+        }
+        else{
+          door.setAttribute("rotation",
+          {
+            x:0, y:90,z:0
+          });
+          door.setAttribute("position",
+          {
+            x:0.49, y:0,z:1
+          });
+        }
+      });  
+    </script>
   </body>
 </html>
