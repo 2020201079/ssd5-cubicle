@@ -4,7 +4,9 @@
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://clara.io/embed/ff43b24d-b71b-49fb-95ca-323ca05c527f?renderer=webgl" width="800" height="600" allowfullscreen></script>
-   
+    <script src="cl.js" ></script>  </head>
+
+    
     <!--script src="https://rawgit.com/aframevr/aframe/c4aa63e/dist/aframe-master.min.js"></script-->
     <script src="./dist/aframe-super-keyboard.min.js"></script>
     
@@ -15,6 +17,8 @@
     
     <a-scene >
         <a-assets>
+            <a-asset-item id="flower-obj" src="models/flower-obj/flower.obj"></a-asset-item>
+            <a-asset-item id="flower-mtl" src="models/flower-obj/flower.mtl"></a-asset-item>
             <a-asset-item id="table-obj" src="/models/table-obj/table.obj"></a-asset-item>
             <a-asset-item id="table-mtl" src="/models/table-obj/table.mtl"></a-asset-item>
             <a-asset-item id="laptop-obj" src="/models/desktop-computer-obj/desktop-computer.obj"></a-asset-item>
@@ -44,6 +48,9 @@
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
           <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.7" scale="1 1.5 1">
+            <a-entity obj-model="obj: #flower-obj;mtl: #flower-mtl;" position="1 0.42 -0.1" scale="0.12 0.12 0.12" rotation="0 180 0" ></a-entity>
+            <a-entity clock-component="ClockType:analog;SecHandColor:red"
+            position="0.5 1.6 -0.6"scale="0.1 0.1 0.1" rotation="0 0 0"></a-entity>
             <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.25 0.3" rotation="0 90 0" ></a-entity>
             <a-entity obj-model="obj: #chair-obj;mtl: #chair-mtl;" position="0.4 0 0.2" scale="1 1 1" rotation="0 90 0" ></a-entity>
             <a-entity id="keyboard" super-keyboard="hand: #mouseCursor; imagePath:../dist/" position="0.5 0.85 -0.28" rotation="-1 0 0"></a-entity>
