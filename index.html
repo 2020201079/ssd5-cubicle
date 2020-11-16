@@ -10,6 +10,15 @@
     
     <title>Work station cubicle </title>
 
+    <audio controls id="music1">
+      <source src="./dist/song1.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls id="music2">
+      <source src="./dist/song2.mp3" type="audio/mpeg">
+    </audio>
+
+    
   </head>
   <body>
     
@@ -58,7 +67,7 @@
           <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 90 0" position="0.7 0 7.5" scale="1 1.5 1">
             <a-entity obj-model="obj: #laptop-obj;mtl: #laptop-mtl;" position="0.5 0.82 -0.3" scale="0.2 0.25 0.3" rotation="0 90 0" ></a-entity>
             <a-entity obj-model="obj: #chair-obj;mtl: #chair-mtl;" position="0.4 0 0.2" scale="1 1 1" rotation="0 90 0" ></a-entity>
-            <a-entity id="keyboard" super-keyboard="hand: #mouseCursor; imagePath:../dist/" position="0.5 0.85 -0.28" rotation="-1 0 0"></a-entity>
+            <a-entity id="keyboard1" super-keyboard="hand: #mouseCursor; imagePath:../dist/" position="0.5 0.85 -0.28" rotation="-1 0 0"></a-entity>
             <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
             <a-entity id="hand" laser-controls="hand: right">
               <a-sphere radius="0.03"></a-sphere>
