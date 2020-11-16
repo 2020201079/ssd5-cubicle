@@ -11,3 +11,10 @@ Explanation:
 Future Works:
 
 We hope to add a keyboard to the computer to make it more responsive in the future .
+
+Branch Light-Switch-Clock:
+Line: 32-33 = Adding a switch model.
+Line: 46-47 = Switch object calling.
+Line: 50-51 =  Adding clock.
+Line: 86-88 =  Adding light for whole room light in yellow color.
+Line 130-151 = Clock JS. 
