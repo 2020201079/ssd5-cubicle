@@ -38,6 +38,8 @@
             <a-asset-item id="chair-mtl" src="models/chair-obj/chair.mtl"></a-asset-item>
             <a-asset-item id="door-obj" src="models/door/door.obj"></a-asset-item>
             <a-asset-item id="door-mtl" src="models/door/door.mtl"></a-asset-item>
+            <a-asset-item id="cup-obj" src="models/cup-obj/cup.obj"></a-asset-item>
+            <a-asset-item id="cup-mtl" src="models/cup-obj/cup.mtl"></a-asset-item>
         </a-assets>
         <a-camera >
           <a-cursor color="#FF0000"></a-cursor>
@@ -86,9 +88,11 @@
           </rw-wall>
           <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
           <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
-          <a-entity obj-model="obj: #coffee-machine-obj;mtl: #coffee-machine-mtl;" position="0.5 0.7 -0.55" scale="0.03 0.03 0.03" rotation="0 0 0" >
-            <a-entity obj-model="obj: #coffee-table-obj;mtl: #coffee-table-mtl;" position="0 -17 1" scale="12 12 12" rotation="0 0 0" ></a-entity>
+          <a-entity id="coffeeMachine" obj-model="obj: #coffee-machine-obj;mtl: #coffee-machine-mtl;" position="0.2 0.5 -0.55" scale="0.03 0.03 0.03" rotation="0 0 0" >
+
           </a-entity>
+          <a-entity obj-model="obj: #coffee-table-obj;mtl: #coffee-table-mtl;" position="0 0 -0.55" scale="0.5 0.4 0.36" rotation="0 0 0"></a-entity>
+          <a-entity id="cup" obj-model="obj: #cup-obj;mtl: #cup-mtl;" position="-0.2 0.45 -0.55" scale="0.08 0.08 0.08" rotation="0 0 0" visible="false"></a-entity>
 
         </rw-room>
 
@@ -107,8 +111,6 @@
       door.addEventListener("click",function()
       {
         var currRotation = door.getAttribute("rotation")
-        console.log(currRotation);
-        console.log(typeof(currRotation));
         if (currRotation.x == 0 && currRotation.y == 90 && currRotation.z == 0){
           door.setAttribute("rotation",
           {
@@ -129,7 +131,31 @@
             x:0.49, y:0,z:1
           });
         }
-      });  
+      });
+
+      var coffeeMachine = document.getElementById("coffeeMachine");
+      coffeeMachine.addEventListener("click",function(){
+        var cup = document.getElementById("cup");
+        cup.setAttribute("visible",false);
+        if(coffeeMachine.getAttribute("animation") != null){
+          var at = coffeeMachine.getAttribute("animation");
+          coffeeMachine.removeAttribute("animation");
+        }
+        var pos = coffeeMachine.getAttribute("position");
+        coffeeMachine.setAttribute("position",{x:0.2, y:0.5, z:-0.55});
+        coffeeMachine.setAttribute("animation",
+        {property: "position", to: {x:0.215, y:0.5, z:-0.55}, dur: 150,loop: 11});
+
+        //want to make it visible after animation
+        cup.setAttribute("visible",true);
+      });
+
+      var cup = document.getElementById("cup");
+      cup.addEventListener("click",function(){
+        if(cup.getAttribute("visible")){
+          cup.setAttribute("visible",false);
+        }
+      });
     </script>
   </body>
 </html>
