@@ -142,4 +142,54 @@ remove: function () {
   this.el.removeObject3D('Clock');
 } 
 });
+
+var door = document.getElementById("door");
+door.addEventListener("click",function()
+{
+  var currRotation = door.getAttribute("rotation")
+  if (currRotation.x == 0 && currRotation.y == 90 && currRotation.z == 0){
+    door.setAttribute("rotation",
+    {
+      x:0, y:180,z:0
+    });
+    door.setAttribute("position",
+    {
+      x:0.17, y:0,z:1.4
+    });
+  }
+  else{
+    door.setAttribute("rotation",
+    {
+      x:0, y:90,z:0
+    });
+    door.setAttribute("position",
+    {
+      x:0.49, y:0,z:1
+    });
+  }
+});
+
+var coffeeMachine = document.getElementById("coffeeMachine");
+coffeeMachine.addEventListener("click",function(){
+  var cup = document.getElementById("cup");
+  cup.setAttribute("visible",false);
+  if(coffeeMachine.getAttribute("animation") != null){
+    var at = coffeeMachine.getAttribute("animation");
+    coffeeMachine.removeAttribute("animation");
+  }
+  var pos = coffeeMachine.getAttribute("position");
+  coffeeMachine.setAttribute("position",{x:0.2, y:0.5, z:-0.55});
+  coffeeMachine.setAttribute("animation",
+  {property: "position", to: {x:0.215, y:0.5, z:-0.55}, dur: 150,loop: 11});
+
+  //want to make it visible after animation
+  cup.setAttribute("visible",true);
+});
+
+var cup = document.getElementById("cup");
+cup.addEventListener("click",function(){
+  if(cup.getAttribute("visible")){
+    cup.setAttribute("visible",false);
+  }
+});
  
