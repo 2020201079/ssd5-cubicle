@@ -29,10 +29,8 @@
         <a-assets>
             <a-asset-item id="flower-obj" src="models/flower-obj/flower.obj"></a-asset-item>
             <a-asset-item id="flower-mtl" src="models/flower-obj/flower.mtl"></a-asset-item>
-                        <a-asset-item id="fire-obj" src="models/fire-ext/fire-extinguisher.obj"></a-asset-item>
-                        <a-asset-item id="fire-mtl" src="models/fire-ext/fire-extinguisher.mtl"></a-asset-item>
-
-
+            <a-asset-item id="fire-obj" src="models/fire-ext/fire-extinguisher.obj"></a-asset-item>
+            <a-asset-item id="fire-mtl" src="models/fire-ext/fire-extinguisher.mtl"></a-asset-item>
             <a-asset-item id="table-obj" src="/models/table-obj/table.obj"></a-asset-item>
             <a-asset-item id="table-mtl" src="/models/table-obj/table.mtl"></a-asset-item>
             <a-asset-item id="laptop-obj" src="/models/desktop-computer-obj/desktop-computer.obj"></a-asset-item>
@@ -49,6 +47,9 @@
             <a-asset-item id="door-mtl" src="models/door/door.mtl"></a-asset-item>
             <a-asset-item id="cup-obj" src="models/cup-obj/cup.obj"></a-asset-item>
             <a-asset-item id="cup-mtl" src="models/cup-obj/cup.mtl"></a-asset-item>
+            <a-asset-item id="switch-obj" src="models/switch/switch.obj"></a-asset-item>
+            <a-asset-item id="switch-mtl" src="models/switch/switch.mtl"></a-asset-item>
+            
         </a-assets>
         <a-camera >
           <a-cursor color="#FF0000"></a-cursor>
@@ -60,6 +61,7 @@
           <rw-wall position="4 0 8" material="color:#787"></rw-wall>
           <rw-wall position="0 0 8" material="color:#787"></rw-wall>
           <rw-wall position="0 0 0" material="color:#787">
+               <a-entity obj-model="obj: #switch-obj;mtl: #switch-mtl;" position="1.9 1.4 0" scale="2 2 2" rotation="0 0 0" ></a-entity>
               <rw-doorhole id="holeA"></rw-doorhole>
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
