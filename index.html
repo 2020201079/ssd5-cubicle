@@ -58,17 +58,18 @@
           <rw-wall position="4 0 0">
             <a-entity obj-model="obj: #window-obj;mtl: #window-mtl;" position="2.8 0.8 0" scale="0.6 0.6 0.6" rotation="0 0 0" ></a-entity>
           </rw-wall>
-          <rw-wall position="4 0 8" material="color:#787"></rw-wall>
+          <rw-wall position="4 0 8" material="color:#787">
+            <a-entity obj-model="obj: #switch-obj;mtl: #switch-mtl;" position="1.9 1.4 0" scale="2 2 2" rotation="0 0 0" ></a-entity>
+          </rw-wall>
           <rw-wall position="0 0 8" material="color:#787"></rw-wall>
           <rw-wall position="0 0 0" material="color:#787">
-               <a-entity obj-model="obj: #switch-obj;mtl: #switch-mtl;" position="1.9 1.4 0" scale="2 2 2" rotation="0 0 0" ></a-entity>
               <rw-doorhole id="holeA"></rw-doorhole>
               <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
           </rw-wall>
           <a-entity obj-model="obj: #table-obj;mtl: #table-mtl" rotation="0 0 0" position="0.4 0 0.7" scale="1 1.5 1">
             <a-entity obj-model="obj: #flower-obj;mtl: #flower-mtl;" position="1 0.42 -0.1" scale="0.12 0.12 0.12" rotation="0 180 0" ></a-entity>
 
-                        <a-entity obj-model="obj: #fire-obj;mtl: #fire-mtl;" position="3 0.4 -0.56" scale="0.009 0.009 0.009" rotation="0 270 0" ></a-entity>
+            <a-entity obj-model="obj: #fire-obj;mtl: #fire-mtl;" position="3 0.4 -0.56" scale="0.009 0.009 0.009" rotation="0 270 0" ></a-entity>
 
             <a-entity clock-component="ClockType:analog;SecHandColor:red"
             position="0.4 1.33 -0.66"scale="0.08 0.08 0.08" rotation="0 0 0"></a-entity>
@@ -93,7 +94,7 @@
             <a-entity id="hand" laser-controls="hand: right">
               <a-sphere radius="0.03"></a-sphere>
             </a-entity>
-          </a-entity>
+          <!--</a-entity>-->
 
 
         </rw-room>
@@ -114,6 +115,9 @@
           <a-entity id="cup" obj-model="obj: #cup-obj;mtl: #cup-mtl;" position="-0.2 0.45 -0.55" scale="0.08 0.08 0.08" rotation="0 0 0" visible="false"></a-entity>
 
         </rw-room>
+        <!-- Whole room light in yellow color-->
+        <!--<a-light color="white" position="0 0 0"></a-light>-->
+        <!--<a-light type="point" color="white" position="0 1 0" intensity=1></a-light>-->
 
     </a-scene>
 
