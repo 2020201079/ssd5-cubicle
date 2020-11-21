@@ -1,0 +1,3 @@
+Work done by Vilal ali but not merged into the main branch. 
+1) Added the light component. Which changes the whole room into yellowish color.
+2) Has written code for interaction with switch. For example on pressing the light color changes, But did not merge because it was not working properly.
