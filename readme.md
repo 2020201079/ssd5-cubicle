@@ -40,16 +40,18 @@ Explanation:
     Adding a keyboard
     Interaction part of keyboard.
     Prepared video in mid Evaluation.
+    Prepared video in final submission.
 - Varun:
     Placed a workstation Which is having Table, Chair and monitor.
     Place Coffee Machine.
     Interaction part of Coffee Machine.
+    Interaction Part of door.
     Prepared video in final submission.
 - Vilal Ali
     Placed a digital clock.
     Placed a switch board model.
-    Interaction Part of door.
     Documentation in mid and final submission.
+    Prepared video in final submission.
 - Ayush:
     Placed a Analog clock.
     Interaction Part of clock
